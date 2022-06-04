@@ -1,0 +1,108 @@
+/*colors*/
+$md-slavyanerp: (
+    50: #f7f7f7,
+    100: #bcc2c7,
+    200: #9099a1,
+    300: #64707b,
+    400: #42515f,
+    500: #78bcfd,
+    600: #1d2d3d,
+    700: #182634,
+    800: #141f2c,
+    900: #0b131e,
+    A100: #55c3ff,
+    A200: #23acf6,
+    A400: #2680e7,
+    A700: #1c42fd,
+    contrast: (
+        50: #000000,
+        100: #000000,
+        200: #000000,
+        300: #ffffff,
+        400: #ffffff,
+        500: #ffffff,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
+        900: #ffffff,
+        A100: #ffffff,
+        A200: #ffffff,
+        A400: #ffffff,
+        A700: #ffffff,
+    ),
+);
+$primary: map-get($md-slavyanerp, 500);
+$white: #fff;
+$accent: map-get($md-slavyanerp, A100);
+$body: #fff;
+$grey: map-get($md-slavyanerp, 100);
+$white: #fff;
+$black: #000;
+$silver: map-get($md-slavyanerp, 50);
+.grey {
+    background-color: $grey;
+}
+.green {
+    background-color: $accent;
+}
+.white {
+    background-color: $white;
+}
+.white-text {
+    color: $white;
+}
+.black-text {
+    color: $black;
+}
+.silver {
+    background-color: $silver;
+}
+$menu-fix-color: #0f5ba3;
+$project-font-family: "Jost", sans-serif;
+$project-font-size: 14px;
+$project-font-width: 500;
+$wraper-max: 1440px;
+$wraper-min: 960px;
+$wraper: 80%;
+$fontsize: 1em;
+$grid-gutter: 2%;
+$mask-color: rgba(0, 0, 0, 0.2);
+$main_bg: #f9f9f9;
+$h1_color: black;
+$header-icons: map-get($md-slavyanerp, A400 );
+$badge-color: E30C19;
+$aside-width: 350px;
+$aside-icons-color: #727272;
+$aside-color: #fff;
+$aside-node-hover: map-get($md-slavyanerp, 50);
+$shadow: 0 0px 5px 1px rgba(0, 0, 0, 0.06);
+$big-shadow: 0 0 25px 1px rgba(0, 0, 0, 0.06) !important;
+
+/* pre colors*/
+.white {
+    background-color: $white;
+}
+.white-text {
+    color: $white;
+}
+.primary {
+    background-color: $primary;
+}
+.accent {
+    background-color: $accent;
+}
+.primary-text {
+    color: $primary;
+}
+.accent-text {
+    color: $accent;
+}
+
+@mixin transition {
+    -o-transition: all 2s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 2s ease;
+    transition: all 2s ease;
+}
+
+

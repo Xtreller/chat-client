@@ -1,0 +1,126 @@
+@import "../Variables.scss";
+
+.mat-dialog-container {
+    height: auto !important;
+
+    &.mat-datepicker-popup {
+        overflow: hidden !important;
+        box-shadow: $shadow;
+    }
+}
+.mat-select-panel-wrap {
+    flex-basis:auto !important;
+}
+.mat-select {
+    min-height: 19px;
+}
+tr.mat-row:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: silver !important;
+}
+select,
+select * {
+    font-family: Unimasters !important;
+    font-weight: 500 !important;
+}
+.mat-button-base {
+    box-shadow: none !important;
+    text-transform: uppercase;
+    margin-top: 0.45em !important;
+}
+.mat-form-field-outline {
+    background: $white !important ;
+    border-radius: 5px;
+    box-shadow: $shadow;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-start,
+.mat-form-field-appearance-outline .mat-form-field-outline-end,
+.mat-form-field-appearance-outline .mat-form-field-outline-gap {
+    border: none !important;
+}
+.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+.mat-form-field-appearance-outline.mat-form-field-can-float
+    .mat-input-server:focus
+    + .mat-form-field-label-wrapper
+    .mat-form-field-label {
+    display: inline-block !important;
+    width: auto;
+    background-color: $white;
+    box-shadow: $shadow;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 4px;
+}
+.mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 0.5em 0 0.5em 0 !important;
+}
+.mat-form-field-appearance-outline .mat-form-field-label {
+    top: 1.2em !important;
+    padding: 5px !important;
+}
+.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label, .mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
+    transform: translateY(-1.25em) scale(0.75) !important;
+    width: 133.3333333333%;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline,
+.mat-form-field-appearance-outline.mat-form-field-invalid .mat-form-field-outline {
+    border: solid 1px #c0c0c0 !important;
+}
+
+.mat-calendar {
+    background-color: $white;
+}
+
+.mat-calendar-header {
+    background-color: $primary;
+    color: $white;
+    padding-top: 0 !important;
+
+    button {
+        color: $white !important;
+    }
+    .mat-calendar-arrow {
+        border-top-color: $white !important;
+    }
+}
+
+.mat-calendar-body-cell-content:hover {
+    background-color: $accent !important;
+    color: $white !important;
+}
+.mat-calendar-body-selected, .selected-date .mat-calendar-body-cell-content {
+    background-color: $primary !important;
+}
+
+.mat-calendar-controls {
+    margin-top: 0 !important;
+}
+mat-icon {
+    vertical-align: middle;
+}
+.part-tabs {
+    height: calc(100% - 50px);
+}
+.part-tabs .mat-tab-body-wrapper {
+    min-height: 100%;
+}
+
+.mat-paginator-container {
+
+    .mat-paginator-page-size,   .mat-paginator-range-label{
+        padding-top: 10px;
+    }
+
+ }
+
+ .mat-autocomplete-panel {min-width: 500px !important;}
+
+ .mat-chip {font-size: 10px !important;}
+ .mat-standard-chip {min-height: 20px !important;}
+ .mat-menu-panel {min-height: 45px !important;}
+ 

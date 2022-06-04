@@ -1,0 +1,141 @@
+@import "Variables.scss";
+
+.inline {
+  display: inline-block;
+}
+
+.block {
+  display: block;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.left {
+  float: left;
+}
+
+.right { 
+  float: right;
+}
+
+.mrg-auto { 
+  margin-left : auto;
+  margin-right: auto;
+}
+
+.v-center {
+  top: 50%;position: relative; display: block;transform: translateY(-50%);
+}
+
+.shadow {
+  box-shadow:  $big-shadow;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+.table-container {
+  width   : 100%;
+  overflow: auto;
+}
+.cdk-overlay-dark-backdrop {
+  background: $mask-color !important;
+}
+.wrap-normal {white-space: normal;}
+@mixin menu-fix {
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin-bottom: 0px;
+  background-color: $menu-fix-color;
+  position: absolute;
+}
+
+.menu-fix {
+      max-width: 40px;
+      min-width: 40px;
+      padding: 10px;
+      height: 40px;
+        .lines {
+          z-index: 101;
+          width: 100%;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          position: relative;
+          cursor: pointer;
+  span {
+      @include menu-fix;
+      top:9px;
+      &:before {
+          top: -5px;
+          content: "";
+          @include menu-fix;
+      }
+      &:after {
+          top: 5px;
+          @include menu-fix;
+          content: "";
+ 
+      }
+  }
+
+}  &.on  {
+ 
+    background-color: $silver;
+    border-radius: 50%;
+   
+  }
+}
+.pointer {
+  cursor: pointer;
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+a {
+  color: inherit;
+}
+
+.badge {position: absolute; right:2px; top:2px; width: 15px; height: 15px; border-radius: 50%; line-height: 15px; text-align: center; background-color: $badge-color; color: $white; font-size: 0.8em;}
+.devider {margin-top: 2em; border-top: solid 1px #b3b3b3; padding-bottom: 3em;}
+.bordered {border: solid 1px $grey;}
+
+.ps__rail-x, .ps__rail-y {background-color: transparent !important; opacity: 0.6;}
+.ps__thumb-y, .ps__thumb-x {background-color: $primary !important; opacity: 0.6;}
+
+@for $s from 1 through 10 {
+  .opa-#{$s} {
+    opacity: #{$s/10};
+  }
+}
+@for $s from 1 through 50 {
+  .round-#{$s} {
+    border-radius: #{$s}px;
+  }
+}
+
+
+.labels {
+  .label {
+    display: inline-block;
+    border-radius: 15px;
+    font-size: 0.8em;
+    color: #ffff; 
+    padding: 5px 10px 5px 10px; 
+    margin-right: 5px;
+    margin-bottom: 3px;
+  }
+}

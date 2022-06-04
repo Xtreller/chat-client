@@ -1,0 +1,8 @@
+@import "../Variables.scss";
+.fc .fc-daygrid-day.fc-day-today {background-color: $primary !important; color: $white !important}
+
+.fc-today-button {background-color: $accent !important; border: none !important; opacity: 1 !important;}
+.fc-daygrid-event-dot {border-color: $accent !important;}
+.fc-daygrid-event:hover {background-color: $primary !important; color:$white !important}
+.fc-daygrid-day {cursor:  pointer ;}
+.fc-daygrid-day:hover {background-color: $silver;}

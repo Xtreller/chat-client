@@ -1,0 +1,30 @@
+@import "../Variables.scss";
+header {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: $white;
+    padding: 10px;
+    flex-wrap: nowrap;
+    align-items: center;
+    z-index: 12;
+    box-shadow: $shadow;
+    height: 65px;
+
+    .mat-icon {
+        color: $header-icons;
+    }
+  
+} 
+.menu-fix {flex:1}
+.logo { max-width: 20%; flex:1; margin-left: 0px;}
+.header-components {text-align: right; flex:1;}
+.border-right {border-right:solid 1px $silver}
+.mat-menu-content:not(:empty) {padding: 0 !important;}
+.header-decor {top:65px; position: absolute; 
+    background: rgb(11,19,30);
+    background: linear-gradient(90deg, rgba(11,19,30,1) 0%, rgba(100,112,123,1) 100%); 
+     width: 100%; height: 120px;}

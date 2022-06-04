@@ -1,0 +1,21 @@
+<div class="center-form  w50p">
+  <h1 class="text-center">Login</h1>
+  <form action="POST" (ngSubmit)="onSubmit()" [formGroup]="loginForm" class="   pad-20">
+    <div class=" ">
+      <mat-form-field appearance="outline" class="box w100p">
+        <mat-label>Email or Phone</mat-label>
+        <input matInput formControlName="email" placeholder="Email or Phone" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="box w100p">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" formControlName="password" />
+      </mat-form-field>
+      <div class="box w100p text-center link">
+        <a [routerLink]="['/register']">
+          I don't have account.
+        </a>
+      </div>
+      <button mat-raised-button color="accent" class="text-center" >Login</button>
+    </div>
+  </form>
+</div>

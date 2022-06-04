@@ -1,0 +1,70 @@
+@import "Variables.scss";
+@import "Mixins.scss";
+@import "components/Normalize.scss";
+@import "components/Margins.scss";
+@import "components/Paddings.scss";
+@import "components/Typography.scss";
+@import "components/Grid.scss";
+@import "components/Sizing.scss";
+@import "components/Flex-layout.scss";
+@import "components/Wraper.scss";
+@import "components/Header.scss";
+@import "components/Material.scss";;
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,500;0,700;1,300;1,700&display=swap");
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-rendering: optimizelegibility;
+  font-family: "Jost", sans-serif;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font: {
+    family: $project-font-family !important;
+    weight: $project-font-width;
+    size: $project-font-size;
+  }
+  background-color: $body;
+}
+
+.wraper {
+  max-width: $wraper-max;
+  min-width: $wraper-min;
+  width: $wraper;
+}
+
+@import "~@angular/material/theming";
+@include mat-core();
+$primary: mat-palette($md-slavyanerp, 500);
+$accent: mat-palette($md-slavyanerp, A100);
+$warn: mat-palette($md-slavyanerp, A200);
+$theme: mat-light-theme($primary, $accent, $warn);
+@include angular-material-theme($theme);
+
+.mat-tab-label-content span.requiredTab {
+  color: red;
+}
+
+.mat-menu-panel {
+  max-width: none !important;
+}
+
+
+.mat-dialog-container {
+  padding: 0 !important;
+}
+
+.custom-modalbox {
+  .mat-dialog-container {
+    overflow: hidden !important;
+    position: relative !important;
+  }
+}
+
+.tox-tinymce {height: 100% !important;}
+.tox-statusbar__branding {display: none !important;}
+.ag-watermark {display: none !important;}

@@ -39,9 +39,9 @@ html {
 
 @import "~@angular/material/theming";
 @include mat-core();
-$primary: mat-palette($md-slavyanerp, 500);
-$accent: mat-palette($md-slavyanerp, A100);
-$warn: mat-palette($md-slavyanerp, A200);
+$primary: mat-palette($md-chat-app, 500);
+$accent: mat-palette($md-chat-app, A100);
+$warn: mat-palette($md-chat-app, A200);
 $theme: mat-light-theme($primary, $accent, $warn);
 @include angular-material-theme($theme);
 

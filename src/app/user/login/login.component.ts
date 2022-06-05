@@ -36,6 +36,8 @@ export class LoginComponent implements OnInit {
 
           this.snackbar.open('Welcome ' + data.user.email,'',{duration:2500})
           setTimeout(()=>this.router.navigate(['/chats']),2000);
+        }else{
+          this.snackbar.open('Грешен имейл адрес или парола!','',{duration:2500});
         }
       });
     }

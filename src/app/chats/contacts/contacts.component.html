@@ -1,3 +1,9 @@
 <div>
-  <span *ngFor="let contact of contacts" class="row" >{{contact.name}}</span>
+  <a [routerLink]="['/chat/client/2']">
+
+    <div  *ngFor="let contact of contacts;let i = index" matBadge="{{i}}" matBadgeOverlap="true" matBadgeColor="accent" [ngClass]="i == 1 ? 'chat-contact-active' : 'chat-contact'"  class="box row border">
+      {{contact.name}}
+    </div>
+  </a>
+
 </div>

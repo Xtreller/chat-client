@@ -13,11 +13,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { ChatComponent } from './chats/chat/chat.component';
 import { ContactsComponent } from './chats/contacts/contacts.component';
 import { ChatsModule } from './chats/chats.module';
+import { WelcomeComponent } from './welcome/welcome.component';
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,

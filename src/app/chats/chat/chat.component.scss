@@ -1,0 +1,13 @@
+.message{border-radius:10px;padding:15px;background-color:rgba($color:#fcf0f0,$alpha:1); margin-bottom: 10px; width: 60%; clear: right; float: right; max-width: 800px;}
+.message .message-body{margin-top:20px; white-space: normal;}
+.message .timestamp{opacity:0.5;}
+.user, .delete {font-size:1.4em;vertical-align:middle; opacity: 0.2;}
+
+.delete {margin-left: 20px; opacity: 0.1;float: left;}
+.delete:hover {opacity: 1;}
+
+.mymessage {background-color: rgb(232, 239, 247); float: left !important;}
+
+.message-attachment {padding: 10px; background-color: #fff; margin-top: 20px; max-width: 100%;}
+.preview-container {height:30px;width:50%;border-top-left-radius: 10px;border-top-right-radius: 10px; position: absolute;top:19px; left:19px; z-index: 20;}
+.preview-container img {height: 30px;}

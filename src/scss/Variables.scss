@@ -1,5 +1,5 @@
 /*colors*/
-$md-slavyanerp: (
+$md-chat-app: (
     50: #f7f7f7,
     100: #bcc2c7,
     200: #9099a1,
@@ -10,14 +10,14 @@ $md-slavyanerp: (
     700: #182634,
     800: #141f2c,
     900: #0b131e,
-    A100: #55c3ff,
-    A200: #23acf6,
+    A100: #f95700,
+    A200: #55c3ff,
     A400: #2680e7,
     A700: #1c42fd,
     contrast: (
         50: #000000,
         100: #000000,
-        200: #000000,
+        200: #ffffff,
         300: #ffffff,
         400: #ffffff,
         500: #ffffff,
@@ -31,14 +31,14 @@ $md-slavyanerp: (
         A700: #ffffff,
     ),
 );
-$primary: map-get($md-slavyanerp, 500);
+$primary: map-get($md-chat-app, 500);
 $white: #fff;
-$accent: map-get($md-slavyanerp, A100);
+$accent: map-get($md-chat-app, A100);
 $body: #fff;
-$grey: map-get($md-slavyanerp, 100);
+$grey: map-get($md-chat-app, 100);
 $white: #fff;
 $black: #000;
-$silver: map-get($md-slavyanerp, 50);
+$silver: map-get($md-chat-app, 50);
 .grey {
     background-color: $grey;
 }
@@ -69,12 +69,12 @@ $grid-gutter: 2%;
 $mask-color: rgba(0, 0, 0, 0.2);
 $main_bg: #f9f9f9;
 $h1_color: black;
-$header-icons: map-get($md-slavyanerp, A400 );
+$header-icons: map-get($md-chat-app, A400 );
 $badge-color: E30C19;
 $aside-width: 350px;
 $aside-icons-color: #727272;
 $aside-color: #fff;
-$aside-node-hover: map-get($md-slavyanerp, 50);
+$aside-node-hover: map-get($md-chat-app, 50);
 $shadow: 0 0px 5px 1px rgba(0, 0, 0, 0.06);
 $big-shadow: 0 0 25px 1px rgba(0, 0, 0, 0.06) !important;
 

@@ -7,3 +7,11 @@
   width: 40%;
   margin: 0 auto;
 }
+.center-me{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clog{
+  border:2px solid red;
+}

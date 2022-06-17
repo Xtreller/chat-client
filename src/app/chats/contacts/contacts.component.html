@@ -1,8 +1,8 @@
 <div>
-  <a [routerLink]="['/chat/client/2']">
 
-    <div  *ngFor="let contact of contacts;let i = index" matBadge="{{i}}" matBadgeOverlap="true" matBadgeColor="accent" [ngClass]="i == 1 ? 'chat-contact-active' : 'chat-contact'"  class="box row border">
-      {{contact.name}}
+  <a class="link" *ngFor="let contact of contacts" [routerLink]="['/chat/client/',contact.phone]">
+    <div   matBadge="{{contact.messsage_count}}" matBadgeOverlap="true" matBadgeColor="accent" [ngClass]="contact.phone == this.phone ? 'chat-contact-active' : 'chat-contact'"  class="box row border">
+      {{contact.phone}}
     </div>
   </a>
 

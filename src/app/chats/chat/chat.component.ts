@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { ChatService } from '../chat.service';
 
 @Component({
@@ -9,56 +9,68 @@ import { ChatService } from '../chat.service';
   styleUrls: ['./chat.component.scss'],
 })
 export class ChatComponent implements OnInit {
+  @ViewChild('scroll') public scroll:ElementRef= new ElementRef('scroll');
   random: number = 1;
   myid: number | null = 0;
   chatControl:FormControl = new FormControl('',Validators.required);
-  messages: any = [
-    {
-      user_type: 1,
-      content: 'Здравейте! Аз съм тайра за да продължите да си чатите с мен трябва да ви информирам че цената на всяко съобщение е 6лв. Ако желаете да продължим отговорете с да.',
-      from_user: {id:3,name:'Тайра',user_type:1},
-      created_at: '2021-12-22',
-      seen: 'true',
-    },
-    {
-      user_type: 1,
-      content: 'ЧКС',
-      from_user:{id:1,name:'0879123499',user_type:2},
-      created_at: '2021-12-22',
-      seen: 'false',
-    },
-    {
-      user_type: 1,
-      content: 'text3',
-      from_user: {id:1,name:'0879123499',user_type:2},
-      created_at: '2021-12-22',
-      seen: 'false',
-    },
-  ];
+  messages: any = [];
   isClient: string = '';
+  phone: any;
+  event: boolean = false;
   constructor(
     private chatService: ChatService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
     console.log('chat-test');
-    let client = this.route.snapshot.params.id;
-    this.isClient = this.route.snapshot.url[1].path;
+    this.phone = this.route.snapshot.params.id;
+    this.isClient = this.route.snapshot.url[1]?.path;
 
     this.myid = Number(localStorage.getItem('USER_ID'));
-    if (this.isClient == 'client') {
-      console.log(this.isClient, client);
-      console.log();
+    console.log(this.myid);
+
+    this.router.events.subscribe(data=>{
+      if(data instanceof NavigationEnd){
+        this.phone = this.route.snapshot.params.id;
+        // this.event = false;
+        this.getMessages()
+      }
+    })
+    if(this.phone){
+      this.getMessages();
     }
+
   }
   sendMessage(){
     console.log(this.chatControl.value);
+    let data = {
+      to_id:this.phone,
+      content:this.chatControl.value
+    }
+    this.chatService.sendMessage(data).subscribe(data=>{
+      console.log(data)
+      if(data){
+        this.chatControl.reset();
+        this.getMessages();
+      }
+    });
 
   }
+  //  private scrollToBottom() {
+  //   this.perfectScrollbar.directiveRef.scrollToTop(this.chatRef.nativeElement.scrollHeight);
+  // }
   onPaste(event:Event){
     event.preventDefault();
     event.stopPropagation();
     console.log(this.chatControl.value);
+  }
+  getMessages(){
+    this.chatService.getMessages(this.phone).subscribe((resp:any)=>{
+      this.messages = resp.result;
+      // this.scroll.nativeElement.scrollBottom;
+
+     })
   }
 }

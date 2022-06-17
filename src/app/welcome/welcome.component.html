@@ -1,32 +1,18 @@
 <div >
-  <div class="logo pad-top-10 pad-left-10"  ng-dblclick="onDbCLick()">
-    <img src="../../favicon.ico" alt="" class="maxh100p ">
-  </div>
-  <!-- <header>
-  <div class="menu-fix" id="menuBtn" (click)="openAside()">
-    <div class="lines"><span></span></div>
-  </div>
-
-
-  <div class="header-components">
+  <div class="text-center relative mrg-top-20 mrg-bottom-20" >
+      <h2 class="row font16">⭐ Запознай се с нови хора близо до теб!</h2>
+      <h2 class="row font16">💬 Общувай създавайки нови приятелства ... или нещо повече</h2>
+      <h2 class="row font16">❤️ Намерете вашата сродна душа.</h2>
 
   </div>
-
-</header> -->
-  <div class="text-center mrg-top-40 text-black" >
-    <p>
-      <span class="row">⭐ Искаш ли да се запознаеш с готини мацки близо до теб!</span>
-      <span class="row">💬 С коит имате общи теми за разгвор?</span>
-      <span class="row">❤️ Или нещо повече...</span>
-    </p>
-  </div>
-  <div class="h100p mrg-top-100 center-me">
-    <div class="slider  owl-carousel pad-20 card-container">
+  <h3 class="text-center pad-20 relative ">Потребители онлайн</h3>
+  <div class="h100p  center-me">
+    <div class="slider  owl-carousel pad-top-0 card-container">
       <div class="card  mrg-right-20 " *ngFor="let i of [1,2,3,4,5]">
-        <img src="../../assets/static/3.avif" alt="Avatar" style="max-width:200px;max-height:300px; ">
-        <div class=" pad-20 text-center end accent">
-          <h4><b>John Doe</b></h4>
-          <p>Architect & Engineer</p>
+        <img src="../../assets/static/3.avif" alt="Avatar" >
+        <div class="pad-20 text-center end accent">
+          <h4><b>{{i%2==0?'Вики':'Рени'}}</b></h4>
+          <p>{{i%2==0?'Е на 2км от теб':'Иска да си чати с теб!'}}</p>
         </div>
       </div>
     </div>

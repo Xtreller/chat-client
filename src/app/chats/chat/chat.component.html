@@ -1,23 +1,24 @@
 <div class="flex-row-container pad-20">
   <div class="row flex-row-container h100p">
-    <div class="col-30" *ngIf="myid">
+    <div class="col-30">
       <app-contacts></app-contacts>
     </div>
-    <div class=" minh650" [ngClass]="myid?'col-70':'col-100'" >
+    <div class=" minh650 col-70">
       <div class="flex-row-container">
         <div class="box">
           <div class="flex-column-container">
             <!-- <div class="row"               *ngFor="let message of [{user_type:1,content:'text',from_user:1,created_at:'2021-12-22',seen:'true'},{{user_type:1,content:'text',from_user:3,created_at:'2021-12-22',seen:'false'}]; index as i"> -->
-            <div class="box pad-20 mrg-bottom-20" style="border:solid 1px #dadada">
-              <!-- <perfect-scrollbar> -->
-                <div class="row" *ngFor="let message of messages; index as i">
-                  <div class="message row end" [ngClass]="{'right mymessage': message.from_user.user_type == 1}">
+              <div class="box  chats-container">
+                <perfect-scrollbar >
+                <div class="row mrg-right-20" #scroll *ngFor="let message of messages; index as i">
+
+                  <div class="message row end right mymessage" >
                     <div class="scroll-y">
                       <div class="font08">
                         <span>
                           <mat-icon class="user">person</mat-icon>
                         </span>
-                        <strong>{{ message.from_user.name }}</strong> | <span class="timestamp">{{ message.created_at |
+                        <strong>{{ message.from_id}}</strong> | <span class="timestamp">{{ message.created_at |
                           date: "dd-MM-y, HH:mm"}}</span> <span class="right">
                           <mat-icon>{{ message.seen ? 'done_all' : 'check' }}</mat-icon>
                         </span>
@@ -26,47 +27,78 @@
                         *ngIf="thisUserId == message.from_id" class="pointer delete">delete</mat-icon></span> -->
                       </div>
                       <div class="message-body">
-                        <span *ngIf="message.body || message.content">{{ message.body || message.content }}</span>
+                        <span>
+                            Zdraveyte ,shte budete svurzani s chovek blizo do vas.
+                            Za tazi usluga shte budete taksuvani 6lv BGN na suobshtenie.
+                            Syglasni li ste da produljite.
+                        </span>
+                        <div class="message-attachment" *ngIf="message.attachment">
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="message row end" [ngClass]="{'right mymessage': message.from_id == myid}">
+                    <div class="scroll-y">
+                      <div class="font08">
+                        <span>
+                          <mat-icon class="user">person</mat-icon>
+                        </span>
+                        <strong>{{ message.from_id}}</strong> | <span class="timestamp">{{ message.created_at |
+                          date: "dd-MM-y, HH:mm"}}</span> <span class="right">
+                          <mat-icon>{{ message.seen ? 'done_all' : 'check' }}</mat-icon>
+                        </span>
+                        <!-- <span>
+                      <mat-icon (click)="deleteMessage(message.id, i)"
+                        *ngIf="thisUserId == message.from_id" class="pointer delete">delete</mat-icon></span> -->
+                      </div>
+                      <div class="message-body">
+                        <span *ngIf="message.body || message.content">{{ message.body || message.content}}</span>
                         <div class="message-attachment" *ngIf="message.attachment">
                           <!-- <img *ngIf="imageExtensions.includes(message.attachment_extension)"
                           src="{{environment.environment.fileStorage}}{{message.attachment}}">
                         <a *ngIf="imageExtensions.includes(message.attachment_extension) === false"
-                          href="{{environment.environment.fileStorage}}{{message.attachment}}">да та иба в бъга</a> -->
+                          href="{{environment.environment.fileStorage}}{{message.attachment}}"></a> -->
                         </div>
+
                       </div>
                     </div>
                   </div>
                   <!-- </div> -->
 
                 </div>
-              <!-- </perfect-scrollbar> -->
+                  <p *ngIf="!messages || messages.length==0">
+                    No messages yet..
+                  </p>
+            </perfect-scrollbar>
 
-            </div>
-            <div class="box maxh70 silver pad-10">
-              <!-- <div *ngIf="file && imageExtensions.includes(fileExtension)">
+          </div>
+          <div class="box maxh70  pad-top-10">
+            <!-- <div *ngIf="file && imageExtensions.includes(fileExtension)">
                 <div class="preview-container">
                   <img src="{{ imagePreview }}"> {{ file.name }}
 
                 </div>
 
               </div> -->
-              <mat-form-field class="w100p" appearance="outline">
-                <input matInput [formControl]="chatControl" type="text" (keydown.enter)="sendMessage()"
-                  (paste)="onPaste($event)">
-                <!-- <button mat-icon-button matSuffix (click)="fileInput.click()">
+            <mat-form-field class="w100p" appearance="outline">
+              <input matInput [formControl]="chatControl" type="text" (keydown.enter)="sendMessage()"
+                (paste)="onPaste($event)">
+              <!-- <button mat-icon-button matSuffix (click)="fileInput.click()">
                   <mat-icon>attachment</mat-icon>
                 </button> -->
 
-                <button mat-icon-button matSuffix (click)="sendMessage()">
-                  <mat-icon>send</mat-icon>
-                </button>
-              </mat-form-field>
-              <!-- <input type="file" name="doc" id="doc" #fileInput [hidden]="true" (change)="attachFile($event.target.files)"> -->
+              <button mat-icon-button matSuffix (click)="sendMessage()">
+                <mat-icon>send</mat-icon>
+              </button>
+            </mat-form-field>
+            <!-- <input type="file" name="doc" id="doc" #fileInput [hidden]="true" (change)="attachFile($event.target.files)"> -->
 
-            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>

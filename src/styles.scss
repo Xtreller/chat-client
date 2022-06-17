@@ -2,7 +2,11 @@
 @import "./scss/humge-ui-framework.scss";
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 
+html, body {
+  height: 100%;
+  background: url('/assets/static/welcome-bg.jpg') no-repeat fixed center;
 
+}
 .center-form{
   width: 40%;
   margin: 0 auto;
@@ -15,6 +19,6 @@
 .clog{
   border:2px solid red;
 }
-.welcome{
-  background: url('/assets/static/welcome-bg.jpg') no-repeat fixed center;
+.link{
+  text-decoration: none;
 }

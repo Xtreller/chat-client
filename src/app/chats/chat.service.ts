@@ -14,6 +14,13 @@ export class ChatService {
   }
   getContacts(){
     localStorage.getItem('USER_ID');
-    return this.httpClient.get(this.swapi + 'people')
+    return this.httpClient.get(this.url + 'getClients'+'?token='+ localStorage.getItem('TOKEN'))
+  }
+  getMessages(phone:number){
+    return this.httpClient.get(this.url + 'getMessages'+'/'+phone+'?token='+ localStorage.getItem('TOKEN'))
+  }
+  sendMessage(data:any){
+    return this.httpClient.post(this.url + 'sendMessage?token='+ localStorage.getItem('TOKEN'),data);
+
   }
 }

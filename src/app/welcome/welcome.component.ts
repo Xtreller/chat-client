@@ -12,8 +12,5 @@ export class WelcomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onDbCLick(){
-    this.router.navigate(['login'])
-  }
 
 }

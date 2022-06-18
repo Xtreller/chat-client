@@ -5185,7 +5185,7 @@ input[type="reset"].action,
 input[type="submit"].action {
   background: #d9d9d9;
 }
-.button:before,
+/* .button:before,
 button:before,
 input[type="button"]:before,
 input[type="reset"]:before,
@@ -5203,8 +5203,8 @@ input[type="submit"]:before {
   -moz-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-}
-.button:active:before,
+} */
+/* .button:active:before,
 button:active:before,
 input[type="button"]:active:before,
 input[type="reset"]:active:before,
@@ -5217,7 +5217,7 @@ input[type="submit"]:active:before {
   -moz-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-}
+} */
 .button[disabled],
 button[disabled],
 input[type="button"][disabled],

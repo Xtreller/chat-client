@@ -5,11 +5,11 @@ $md-chat-app: (
     200: #9099a1,
     300: #64707b,
     400: #42515f,
-    500: #78bcfd,
+    500:  #78bcfd,
     600: #1d2d3d,
     700: #182634,
     800: #141f2c,
-    900: #0b131e,
+    900: #f9570091,
     A100: #f95700,
     A200: #55c3ff,
     A400: #2680e7,
@@ -35,6 +35,7 @@ $primary: map-get($md-chat-app, 500);
 $white: #fff;
 $accent: map-get($md-chat-app, A100);
 $body: #fff;
+$accent-pale:map-get($md-chat-app,900);
 $grey: map-get($md-chat-app, 100);
 $white: #fff;
 $black: #000;

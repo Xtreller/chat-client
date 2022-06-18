@@ -1,39 +1,31 @@
-<div class="welcome">
-  <div class="logo pad-top-10 pad-left-10">
-    <img src="../../favicon.ico" alt="" class="maxh100p ">
-  </div>
-  <!-- <header>
-  <div class="menu-fix" id="menuBtn" (click)="openAside()">
-    <div class="lines"><span></span></div>
-  </div>
-
-
-  <div class="header-components">
+<div >
+  <div class="text-center relative mrg-top-20 mrg-bottom-20" >
+      <span class="row font14 lh30">⭐ Запознай се с нови хора близо до теб!</span>
+      <span class="row font14 lh30">💬 Общувай създавайки нови приятелства ... или нещо повече</span>
+      <span class="row font14 lh30">❤️ Намерете вашата сродна душа.</span>
 
   </div>
-
-</header> -->
-  <div class="text-center mrg-top-40 " style="border:2px solid red;color:black;">
-    <p>
-      <span class="row">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, ipsam?</span>
-      <span class="row">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto, a.</span>
-      <span class="row">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia tempore ipsa, architecto
-        assumenda
-        maxime reprehenderit ratione natus at repellendus. Tempore.</span>
-      <span class="row">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis aliquam perferendis, cumque
-        laborum
-        saepe hic!</span>
-    </p>
-  </div>
-  <div class="h100p  clog mrg-top-100 center-me">
-    <div class="slider clog owl-carousel pad-20 card-container">
-      <div class="card   " *ngFor="let i of [1,2,3]">
-        <img src="../../assets/static/img_avatar.png" alt="Avatar" style="max-width:100%;max-height:300px; ">
-        <div class=" text-center">
-          <h4><b>John Doe</b></h4>
-          <p>Architect & Engineer</p>
+  <h3 class="text-center pad-20 relative ">Потребители онлайн</h3>
+  <div class="h100p  center-me">
+    <div class="slider  owl-carousel pad-top-0 card-container">
+      <div class="card  mrg-right-20 " *ngFor="let i of [1,2,3,4,5]">
+        <img src="../../assets/static/3.avif" alt="Avatar" >
+        <div class="pad-20 text-center end accent">
+          <h4><b>{{i%2==0?'Вики':'Рени'}}</b></h4>
+          <p>{{i%2==0?'Е на 2км от теб':'Иска да си чати с теб!'}}</p>
         </div>
       </div>
     </div>
+  </div>
+  <div class="mrg-top-20 mrg-bottom-20 pad-20 text-center ">
+    <div class="row mrg-bottom-10">
+      Започни чат сега с най-близкия до теб потребител!
+    </div>
+    <a class="row" href="sms:+359879122366" color="accent" mat-raised-button>Започни чат</a>
+    <div class="mrg-top-20 font08">
+      Най-добрият сайт за онлайн запознанства. Този сайт има общи условия, с които се съгласявате при влизане в чата с потребител.
+      Услугата се таксува 5.60лв с ДДС на изпратено съобщение.
+    </div>
+
   </div>
 </div>

@@ -14,12 +14,20 @@ import { ChatComponent } from './chats/chat/chat.component';
 import { ContactsComponent } from './chats/contacts/contacts.component';
 import { ChatsModule } from './chats/chats.module';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { PerfectScrollbarConfigInterface, PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarEvents } from 'ngx-perfect-scrollbar/lib/perfect-scrollbar.interfaces';
+import { HeaderComponent } from './header/header.component';
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true
+};
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
     WelcomeComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +38,12 @@ import { WelcomeComponent } from './welcome/welcome.component';
     HttpClientModule,
     ChatsModule,
 ],
-  providers: [],
+providers: [
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue:DEFAULT_PERFECT_SCROLLBAR_CONFIG
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,12 +5,27 @@
 }
 .burger{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: end;
   align-items: end;
 }
 .menu-fix{
   margin:10px;
+}
+.contacts-menu{
+  display: none;
+}
+.contacts-list{
+  display: block;
+}
+@media screen and (max-width:750px) {
+  .contacts-menu{
+    display: block;
+  }
+  .contacts-list{
+    display: none;
+  }
+
 }
 // header{
 //   opacity: 0.1;

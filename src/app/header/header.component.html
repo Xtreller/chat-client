@@ -1,8 +1,33 @@
 <div class="w100p row flex-row-container">
-  <div class="logo pad-top-10 pad-left-10" (dblclick)="onDbCLick()">
-    <img src="../../favicon.ico" alt="" class="maxh100p ">
+  <div class="logo pad-top-10 pad-left-10" >
+    <a href="/">
+      <img src="../../favicon.ico" alt="" class="maxh100p ">
+    </a>
   </div>
-  <div class=" box burger">
-      <button class="menu-fix" mat-icon-button matBadge="2" matBadgeOverlap="true" matBadgeColor="accent" ><mat-icon>menu</mat-icon></button>
+
+  <div class=" box burger ">
+    <button mat-button *ngIf="isAuth && user" >{{user}}</button>
+    <div class="mrg-right-20 contacts-menu" *ngIf="showContacts && contacts?.length" >
+      <button mat-icon-button [matMenuTriggerFor]="contactsMenu" matBadge="2" matBadgeOverlap="true" matBadgeColor="accent">
+        <mat-icon>contacts</mat-icon>
+      </button>
+      <mat-menu #contactsMenu="matMenu">
+        <button mat-menu-item *ngFor="let contact of contacts" (click)="redirect(contact.phone)">{{contact.phone}}</button>
+      </mat-menu>
+    </div>
+    <div class="mrg-right-20">
+
+      <!-- <button class="menu-fix" mat-icon-button matBadge="2" matBadgeOverlap="true" matBadgeColor="accent" ></button> -->
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <a [routerLink]="['/login']" class="nodecor" *ngIf="!isAuth" > <button mat-menu-item>Вход</button></a>
+         <button mat-menu-item (click)="logout()" *ngIf="isAuth" >Изход</button>
+        <a [routerLink]="['/chats']" class="nodecor"> <button mat-menu-item>Чатове</button></a>
+        <button mat-menu-item>About</button>
+      </mat-menu>
+    </div>
   </div>
+
 </div>

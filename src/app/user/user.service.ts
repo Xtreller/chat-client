@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class UserService {
+
   environment = environment;
   url:string = environment.apiUrl + 'auth/';
   constructor(private httpClient:HttpClient) { }
@@ -14,5 +15,9 @@ export class UserService {
   }
   login(data:any){
     return this.httpClient.post(this.url+ 'login',data)
+  }
+  logout(){
+    return this.httpClient.get(this.url+ 'logout')
+
   }
 }

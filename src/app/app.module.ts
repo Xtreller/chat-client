@@ -9,7 +9,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field'
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ChatComponent } from './chats/chat/chat.component';
 import { ContactsComponent } from './chats/contacts/contacts.component';
 import { ChatsModule } from './chats/chats.module';
@@ -17,6 +17,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { PerfectScrollbarConfigInterface, PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarEvents } from 'ngx-perfect-scrollbar/lib/perfect-scrollbar.interfaces';
 import { HeaderComponent } from './header/header.component';
+import { HttpInterceptorService } from './http-interceptor.service';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -42,6 +43,11 @@ providers: [
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue:DEFAULT_PERFECT_SCROLLBAR_CONFIG
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi:true
     }
   ],
   bootstrap: [AppComponent]

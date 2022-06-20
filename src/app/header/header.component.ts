@@ -21,11 +21,12 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.isAuth = localStorage.getItem('TOKEN');
-    this.user = localStorage.getItem("USER_EMAIL");
     this.router.events.subscribe(data=>{
       if(data instanceof NavigationEnd){
         this.showContacts = this.location.path().includes('chat');
+        this.isAuth = localStorage.getItem('TOKEN');
         if(this.showContacts){
+          this.user = localStorage.getItem("USER_EMAIL");
           this.chatService.getContacts().subscribe((resp:any)=>{
             console.log(resp)
             this.contacts = resp.result;
@@ -47,6 +48,7 @@ export class HeaderComponent implements OnInit {
         this.isAuth = false;
         this.user = null;
         this.router.navigate(['/'])
+        localStorage.clear();
       }
 
     })

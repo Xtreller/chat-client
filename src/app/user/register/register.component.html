@@ -14,12 +14,14 @@
         <mat-label>Password</mat-label>
         <input matInput type="password" formControlName="password" />
       </mat-form-field>
-      <div class="box w100p text-center link">
+      <div class="row text-center mrg-bottom-20">
+        <button mat-raised-button color="accent" class="text-center" >Register</button>
+      </div>
+      <div class="box w100p text-center link nodecor">
         <a [routerLink]="['/login']">
-          I have account.
+          I have an account
         </a>
       </div>
-      <button mat-raised-button color="accent" class="text-center" >Register</button>
     </div>
   </form>
 </div>

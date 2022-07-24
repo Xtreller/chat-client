@@ -18,6 +18,9 @@ import { PerfectScrollbarConfigInterface, PERFECT_SCROLLBAR_CONFIG } from 'ngx-p
 import { PerfectScrollbarEvents } from 'ngx-perfect-scrollbar/lib/perfect-scrollbar.interfaces';
 import { HeaderComponent } from './header/header.component';
 import { HttpInterceptorService } from './http-interceptor.service';
+import { AdminPanelComponent } from './user/admin-panel/admin-panel.component';
+import { AgGridModule } from 'ag-grid-angular';
+import { AdminTableActionsComponent } from './user/admin-panel/admin-table-actions/admin-table-actions.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -29,6 +32,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     LoginComponent,
     WelcomeComponent,
     HeaderComponent,
+    AdminPanelComponent,
+    AdminTableActionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +43,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MaterialModule,
     HttpClientModule,
     ChatsModule,
+    AgGridModule
 ],
 providers: [
     {

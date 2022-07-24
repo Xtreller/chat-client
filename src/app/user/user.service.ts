@@ -7,17 +7,25 @@ import { environment } from 'src/environments/environment';
 })
 export class UserService {
 
-  environment = environment;
-  url:string = environment.apiUrl + 'auth/';
+  private environment = environment;
+  private url:string = environment.apiUrl ;
   constructor(private httpClient:HttpClient) { }
   register(data:any){
-    return this.httpClient.post(this.url+ 'register',data)
+    return this.httpClient.post(this.url+ 'auth/' +'register',data)
   }
   login(data:any){
-    return this.httpClient.post(this.url+ 'login',data)
+    return this.httpClient.post(this.url+'auth/' + 'login',data)
   }
   logout(){
-    return this.httpClient.get(this.url+ 'logout')
-
+    return this.httpClient.get(this.url+ 'auth/' +'logout')
+  }
+  getUsers(){
+    return this.httpClient.get(this.url + 'getUsers');
+  }
+  getClients(){
+    return this.httpClient.get(this.url + 'getClients?token='+localStorage.getItem('TOKEN'))
+  }
+  getRole(id:any){
+    return this.httpClient.get(this.url + 'getRole/'+id+'?token='+localStorage.getItem('TOKEN'))
   }
 }

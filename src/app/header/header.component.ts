@@ -14,21 +14,29 @@ export class HeaderComponent implements OnInit {
   isAuth: any;
   contacts: any;
   user: any;
+  isAdmin:boolean = false;
 
   constructor(private router:Router,
     private location: Location,
-    private userService:UserService,private chatService:ChatService) { }
+    private userService:UserService,
+    private chatService:ChatService) { }
 
   ngOnInit(): void {
     this.isAuth = localStorage.getItem('TOKEN');
+
     this.router.events.subscribe(data=>{
       if(data instanceof NavigationEnd){
         this.showContacts = this.location.path().includes('chat');
         this.isAuth = localStorage.getItem('TOKEN');
+        if(this.isAuth ){
+
+          this.userService.getRole(localStorage.getItem('USER_ID')).subscribe((resp:any)=>{
+            resp.result == "Админ"?this.isAdmin=true:'';
+          })
+        }
         if(this.showContacts){
           this.user = localStorage.getItem("USER_EMAIL");
           this.chatService.getContacts().subscribe((resp:any)=>{
-            console.log(resp)
             this.contacts = resp.result;
           })
         }

@@ -8,11 +8,11 @@
         <div class="box">
           <div class="flex-column-container">
             <!-- <div class="row"               *ngFor="let message of [{user_type:1,content:'text',from_user:1,created_at:'2021-12-22',seen:'true'},{{user_type:1,content:'text',from_user:3,created_at:'2021-12-22',seen:'false'}]; index as i"> -->
-              <div class="box  chats-container">
-                <perfect-scrollbar >
-                <div class="row mrg-right-20" #scroll *ngFor="let message of messages; index as i">
+            <div class="box  chats-container">
+              <perfect-scrollbar>
+                <div class="row mrg-right-20" #scroll *ngFor="let message of messages; index as i;let first = first">
 
-                  <div class="message row end right mymessage" >
+                  <div class="message row end right mymessage">
                     <div class="scroll-y">
                       <div class="font08">
                         <span>
@@ -26,11 +26,11 @@
                       <mat-icon (click)="deleteMessage(message.id, i)"
                         *ngIf="thisUserId == message.from_id" class="pointer delete">delete</mat-icon></span> -->
                       </div>
-                      <div class="message-body">
+                      <div class="message-body" *ngIf="first">
                         <span>
-                            Zdraveyte ,shte budete svurzani s chovek blizo do vas.
-                            Za tazi usluga shte budete taksuvani 6lv BGN na suobshtenie.
-                            Syglasni li ste da produljite.
+                          Vashiyat profil beshe uspeshno aktiviran v platformata. Vednaga shte budete svurzani s
+                          potrebitel blizo do vas. Tazi usluga se zaplashta s 5.60bgn. Uslugata e zabranena za lica pod
+                          18 godini. Jelaete li da produljite
                         </span>
                         <div class="message-attachment" *ngIf="message.attachment">
 
@@ -68,37 +68,37 @@
                   <!-- </div> -->
 
                 </div>
-                  <p *ngIf="!messages || messages.length==0">
-                    No messages yet..
-                  </p>
-            </perfect-scrollbar>
+                <p *ngIf="!messages || messages.length==0">
+                  No messages yet..
+                </p>
+              </perfect-scrollbar>
 
-          </div>
-          <div class="box maxh70  pad-top-10">
-            <!-- <div *ngIf="file && imageExtensions.includes(fileExtension)">
+            </div>
+            <div class="box maxh70  pad-top-10">
+              <!-- <div *ngIf="file && imageExtensions.includes(fileExtension)">
                 <div class="preview-container">
                   <img src="{{ imagePreview }}"> {{ file.name }}
 
                 </div>
 
               </div> -->
-            <mat-form-field class="w100p" appearance="outline">
-              <input matInput [formControl]="chatControl" type="text" (keydown.enter)="sendMessage()"
-                (paste)="onPaste($event)">
-              <!-- <button mat-icon-button matSuffix (click)="fileInput.click()">
+              <mat-form-field class="w100p" appearance="outline">
+                <input matInput [formControl]="chatControl" type="text" (keydown.enter)="sendMessage()"
+                  (paste)="onPaste($event)">
+                <!-- <button mat-icon-button matSuffix (click)="fileInput.click()">
                   <mat-icon>attachment</mat-icon>
                 </button> -->
 
-              <button mat-icon-button matSuffix (click)="sendMessage()">
-                <mat-icon>send</mat-icon>
-              </button>
-            </mat-form-field>
-            <!-- <input type="file" name="doc" id="doc" #fileInput [hidden]="true" (change)="attachFile($event.target.files)"> -->
+                <button mat-icon-button matSuffix (click)="sendMessage()">
+                  <mat-icon>send</mat-icon>
+                </button>
+              </mat-form-field>
+              <!-- <input type="file" name="doc" id="doc" #fileInput [hidden]="true" (change)="attachFile($event.target.files)"> -->
 
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>

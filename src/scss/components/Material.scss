@@ -55,6 +55,7 @@ select * {
     padding-top: 2px;
     padding-bottom: 2px;
     border-radius: 4px;
+    color:$black !important;
 }
 .mat-form-field-appearance-outline .mat-form-field-infix {
     padding: 0.5em 0 0.5em 0 !important;
@@ -70,6 +71,9 @@ select * {
 .mat-form-field-appearance-outline .mat-form-field-outline,
 .mat-form-field-appearance-outline.mat-form-field-invalid .mat-form-field-outline {
     border: solid 1px #c0c0c0 !important;
+}
+.mat-form-field.mat-form-field-invalid .mat-form-field-label, .mat-error {
+  color: $accent !important;
 }
 
 .mat-calendar {
@@ -123,4 +127,4 @@ mat-icon {
  .mat-chip {font-size: 10px !important;}
  .mat-standard-chip {min-height: 20px !important;}
  .mat-menu-panel {min-height: 45px !important;}
- 
+

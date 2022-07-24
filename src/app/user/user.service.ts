@@ -25,4 +25,7 @@ export class UserService {
   getClients(){
     return this.httpClient.get(this.url + 'getClients?token='+localStorage.getItem('TOKEN'))
   }
+  getRole(id:any){
+    return this.httpClient.get(this.url + 'getRole/'+id+'?token='+localStorage.getItem('TOKEN'))
+  }
 }

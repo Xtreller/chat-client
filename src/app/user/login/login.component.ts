@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
   onSubmit(){
     if(this.loginForm.valid){
       this.userService.login(this.loginForm.value).subscribe((data:any)=>{
-        console.log(data);
         if(data.result == 'success'){
           localStorage.setItem('TOKEN',data.token);
           localStorage.setItem('USER_ID',data.user.id);
@@ -34,12 +33,12 @@ export class LoginComponent implements OnInit {
           //ToDo ...
           // localStorage.setItem('USER_ROLE',data.user.role_id);
 
-          this.snackbar.open('Welcome ' + data.user.email,'',{duration:2500})
+          this.snackbar.open('Добре дошли, ' + data.user.email,'',{duration:2500})
           setTimeout(()=>this.router.navigate(['/chats']),2000);
         }else{
           this.snackbar.open('Грешен имейл адрес или парола!','',{duration:2500});
         }
-      });
+      },(error)=>{this.snackbar.open(error.error.error,'',{duration:2500})});
     }
     else{
       this.snackbar.open('Моля попълнете двете полета!','',{duration:2500});

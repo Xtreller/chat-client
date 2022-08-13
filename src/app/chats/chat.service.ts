@@ -21,6 +21,8 @@ export class ChatService {
   }
   sendMessage(data:any){
     return this.httpClient.post(this.url + 'sendMessage?token='+ localStorage.getItem('TOKEN'),data);
-
+  }
+  getWelcomeScreen(){
+    return this.httpClient.get(this.url + 'getLandingData?token='+ localStorage.getItem('TOKEN'));
   }
 }

@@ -44,7 +44,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NoopAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    ChatsModule,
     AgGridModule
 ],
 providers: [

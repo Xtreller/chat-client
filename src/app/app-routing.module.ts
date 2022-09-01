@@ -10,7 +10,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
   {path:'',component:WelcomeComponent},
-  {path:'chats',component:ChatComponent,canActivate:[AuthGuard]},
+  {path:'chats',loadChildren: () => import('./chats/chats.module').then(m => m.ChatsModule)},
   {path:'register',component:RegisterComponent},
   {path:'login',component:LoginComponent},
   {path:'admin_panel',component:AdminPanelComponent,canActivate:[AuthGuard]},

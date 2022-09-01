@@ -24,8 +24,8 @@ export class ChatComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log('chat-test');
     this.phone = this.route.snapshot.params.id;
+    console.log(this.route.snapshot);
     this.isClient = this.route.snapshot.url[1]?.path;
 
     this.myid = Number(localStorage.getItem('USER_ID'));

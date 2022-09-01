@@ -1,6 +1,6 @@
 <div>
 
-  <a class="link" *ngFor="let contact of contacts" [routerLink]="['/chat/client/',contact.phone]">
+  <a class="link" *ngFor="let contact of contacts" [routerLink]="['/chats/client/',contact.phone]">
     <div   matBadge="{{contact.messsage_count}}" matBadgeOverlap="true" matBadgeColor="accent" [ngClass]="contact.phone == this.phone ? 'chat-contact-active' : 'chat-contact'"  class="box row border">
       {{contact.phone}}
     </div>

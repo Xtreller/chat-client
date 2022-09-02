@@ -22,6 +22,7 @@ import { AdminPanelComponent } from './user/admin-panel/admin-panel.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { AdminTableActionsComponent } from './user/admin-panel/admin-table-actions/admin-table-actions.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { AboutComponent } from './about/about.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -36,6 +37,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AdminPanelComponent,
     AdminTableActionsComponent,
     NotFoundPageComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NoopAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    ChatsModule,
     AgGridModule
 ],
 providers: [

@@ -5,6 +5,24 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 }
+.mat-button,
+.mat-flat-button,
+.mat-icon-button,
+.mat-raised-button,
+.mat-stroked-button {
+  border-radius: 5rem;
+}
+.grad {
+  background-image: linear-gradient(to top,#f5ba76a4, rgba(255,0,0,0));
+}
+// .st-button{
+//   transform: scale(0.8);
+// }
+.rot45{
+  transform: rotate(-30deg);
+  font-size: 18px;
+  margin-left:0.3rem;
+}
 @media screen and (min-width:1100px) {
 
   .card-container {
@@ -19,21 +37,22 @@ align-items: center;
 
   .card {
     border: 1px solid rgb(105, 105, 105);
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     overflow: hidden;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     height: 500px;
-
-
+    width: 300px;
   }
 
   .card img {
     height: 80%;
+    width: 100%;
+
   }
 
-  .card>div {
-    height: 20%;
+  .card div {
+    overflow: visible;
   }
 
   .card:hover {
@@ -43,13 +62,14 @@ align-items: center;
 
 
 
-@media screen and (min-width: 580px) and (max-width:1100px) {
+@media screen and (min-width: 580px) and (max-width:1250px) {
   .card-container {
     width: 100%;
     display: grid;
     gap: 20px;
     grid-template-columns: auto auto;
-    padding: 15%;
+    padding: 5%;
+    padding-top: 0;
   }
 
   .card {
@@ -63,8 +83,9 @@ align-items: center;
   }
 
   .card img {
-    height: 80%;
+   height: 80%;
     width: 100%;
+    text-size-adjust: abs($number: 50px);
   }
 
   .card>div {

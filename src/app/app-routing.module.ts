@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './about/about.component';
 import { AuthGuard } from './auth.guard';
 import { ChatComponent } from './chats/chat/chat.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
@@ -10,10 +11,11 @@ import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
   {path:'',component:WelcomeComponent},
-  {path:'chats',component:ChatComponent,canActivate:[AuthGuard]},
+  {path:'chats',loadChildren: () => import('./chats/chats.module').then(m => m.ChatsModule)},
   {path:'register',component:RegisterComponent},
   {path:'login',component:LoginComponent},
   {path:'admin_panel',component:AdminPanelComponent,canActivate:[AuthGuard]},
+  {path:'about',component:AboutComponent},
   {path:'**',component:NotFoundPageComponent},
 ];
 

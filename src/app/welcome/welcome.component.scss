@@ -12,6 +12,17 @@ align-items: center;
 .mat-stroked-button {
   border-radius: 5rem;
 }
+.grad {
+  background-image: linear-gradient(to top,#f5ba76a4, rgba(255,0,0,0));
+}
+// .st-button{
+//   transform: scale(0.8);
+// }
+.rot45{
+  transform: rotate(-30deg);
+  font-size: 18px;
+  margin-left:0.3rem;
+}
 @media screen and (min-width:1100px) {
 
   .card-container {
@@ -37,10 +48,11 @@ align-items: center;
   .card img {
     height: 80%;
     width: 100%;
+
   }
 
-  .card>div {
-    height: 20%;
+  .card div {
+    overflow: visible;
   }
 
   .card:hover {

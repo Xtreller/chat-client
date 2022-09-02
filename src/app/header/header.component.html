@@ -16,9 +16,10 @@
       </mat-menu>
     </div>
     <div class="mrg-right-20">
+      <button mat-icon-button [routerLink]="['/about']" matTooltip="About"><mat-icon>info</mat-icon></button>
 
       <!-- <button class="menu-fix" mat-icon-button matBadge="2" matBadgeOverlap="true" matBadgeColor="accent" ></button> -->
-      <button mat-icon-button [matMenuTriggerFor]="menu">
+      <!-- <button mat-icon-button [matMenuTriggerFor]="menu">
         <mat-icon>menu</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
@@ -26,8 +27,7 @@
          <button mat-menu-item (click)="logout()" *ngIf="isAuth" >Изход</button>
         <a [routerLink]="['/chats']" class="nodecor"> <button mat-menu-item>Чатове</button></a>
         <a [routerLink]="['/admin_panel']" class="nodecor" *ngIf="isAdmin"> <button mat-menu-item>Админ</button></a>
-        <button mat-menu-item>About</button>
-      </mat-menu>
+      </mat-menu> -->
     </div>
   </div>
 

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './about/about.component';
 import { AuthGuard } from './auth.guard';
 import { ChatComponent } from './chats/chat/chat.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'register',component:RegisterComponent},
   {path:'login',component:LoginComponent},
   {path:'admin_panel',component:AdminPanelComponent,canActivate:[AuthGuard]},
+  {path:'about',component:AboutComponent},
   {path:'**',component:NotFoundPageComponent},
 ];
 

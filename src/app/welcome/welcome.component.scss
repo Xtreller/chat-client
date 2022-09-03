@@ -58,6 +58,9 @@ align-items: center;
   .card:hover {
     box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
   }
+  .info{
+    font-size: 12px;
+  }
 }
 
 
@@ -90,6 +93,9 @@ align-items: center;
 
   .card>div {
     height: 20%;
+  }
+  .info{
+    font-size: 9px;
   }
 }
 

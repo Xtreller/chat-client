@@ -24,6 +24,8 @@ import { AdminTableActionsComponent } from './user/admin-panel/admin-table-actio
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { AboutComponent } from './about/about.component';
 import { DummyComponent } from './dummy/dummy.component';
+import { VerificationCodeComponent } from './verification-code/verification-code.component';
+import { MatProgressSpinner, MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -40,6 +42,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NotFoundPageComponent,
     AboutComponent,
     DummyComponent,
+    VerificationCodeComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NoopAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    AgGridModule
+    AgGridModule,
+    MatProgressSpinnerModule
+
+
 ],
 providers: [
     {

@@ -8,6 +8,7 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
 import { AdminPanelComponent } from './user/admin-panel/admin-panel.component';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
+import { VerificationCodeComponent } from './verification-code/verification-code.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:'admin_panel',component:AdminPanelComponent,canActivate:[AuthGuard]},
   {path:'about',component:AboutComponent},
   {path:'openSms',component:DummyComponent},
+  {path:'verification',component:VerificationCodeComponent},
   {path:'**',component:NotFoundPageComponent},
 ];
 

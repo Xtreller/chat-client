@@ -4,24 +4,35 @@
 @import 'ag-grid-community/dist/styles/ag-grid.css';
 @import 'ag-grid-community/dist/styles/ag-theme-alpine-dark.css';
 
-html, body {
+html,
+body {
   height: 100%;
   background: url('/assets/static/welcome-bg.jpg') no-repeat fixed center;
   background-size: cover;
 
 }
-.center-form{
+
+.center-form {
   width: 40%;
   margin: 0 auto;
 }
-.center-me{
+
+.center-me {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.clog{
-  border:2px solid red;
+
+.clog {
+  border: 2px solid red;
 }
-.link{
+
+.link {
   text-decoration: none;
+}
+
+@media screen and (max-width: 580px) {
+  .info {
+    font-size: 7px;
+  }
 }

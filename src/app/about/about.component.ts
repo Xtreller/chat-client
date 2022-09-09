@@ -12,8 +12,7 @@ export class AboutComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let a = document.getElementById('trigger') as HTMLElement;
-    a.click();
+
   }
 
 }

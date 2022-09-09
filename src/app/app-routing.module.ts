@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { AuthGuard } from './auth.guard';
 import { ChatComponent } from './chats/chat/chat.component';
+import { DummyComponent } from './dummy/dummy.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { AdminPanelComponent } from './user/admin-panel/admin-panel.component';
 import { LoginComponent } from './user/login/login.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'admin_panel',component:AdminPanelComponent,canActivate:[AuthGuard]},
   {path:'about',component:AboutComponent},
+  {path:'openSms',component:DummyComponent},
   {path:'**',component:NotFoundPageComponent},
 ];
 

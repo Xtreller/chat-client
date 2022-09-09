@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
+    let a = document.getElementById('trigger') as HTMLElement;
+    a.click();
   }
 
 }

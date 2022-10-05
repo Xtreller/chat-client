@@ -15,9 +15,9 @@ align-items: center;
 .grad {
   background-image: linear-gradient(to top,#f5ba76a4, rgba(255,0,0,0));
 }
-// .st-button{
-//   transform: scale(0.8);
-// }
+.text-fade{
+opacity: 0.5;
+}
 .rot45{
   transform: rotate(-30deg);
   font-size: 18px;
@@ -132,17 +132,9 @@ align-items: center;
     margin: 10px;
 
   }
-
   .info{
     font-size: 5px;
   }
-  // .card img{
-  //   height: 80%;
-  //   padding: 60px;
-  // }
-  // .card > div{
-  //   height: 20%;
-  // }
   #start-chat-btn{
     display:none;
   }

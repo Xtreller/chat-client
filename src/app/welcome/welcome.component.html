@@ -7,58 +7,25 @@
   </div>
   <div class="h100p   center-items mrg-top-40">
     <h3 class="text-left pad-10 pad-bottom-15 w90p font14"><span matTooltip="online" style="color: green;">● </span> Потребители online:</h3>
-    <div class="slider  owl-carousel  card-container">
-      <div class="card  mrg-right-20 ">
-        <img src="../../assets/static/Hot-Selfies-29.jpg" alt="Avatar" >
+    <div class="cards">
+      <!-- <div  class="card  mrg-right-20  ">
+        <img src="../../assets/static/viber_image_2022-10-31_19-13-41-177.jpg" alt="Avatar" >
         <div class="pad-20 maxh20p text-center center-items end  grad">
-          <!-- <h4><b><span matTooltip="online" style="color: green;margin-right: 5px;">● online</span></b></h4> -->
-          <!-- <p>Е на 500м от теб</p> -->
           <p class="mrg-bottom-5">📍 <span class="text-fade ">е на 5km от теб.</span> </p>
           <p>Търси запознанство</p>
           <a class="row st-button text-white"   href="sms:1974?&body=chat" color="accent" mat-stroked-button>Започни чат <mat-icon class="rot45">send</mat-icon></a>
         </div>
-      </div>
-      <div class="card  mrg-right-20 ">
-        <img src="../../assets/static/Hot-Selfies-32.jpg" alt="Avatar"  class="grad">
-        <div class="pad-20  maxh20p text-center end  center-items grad" >
-          <!-- <h4><b><span matTooltip="online" style="color: green;margin-right: 5px;">● online</span></b></h4> -->
-          <!-- <p>Е свободна тази вечер</p> -->
-          <p class="mrg-bottom-5">📍 <span class="text-fade">е на 7km от теб.</span> </p>
-          <p class="mrg-bottom-5">Ви изпрати съобщение</p>
-          <a class="row st-button text-white"   href="sms:1974?&body=ok" color="accent" mat-stroked-button>Започни чат <mat-icon class="rot45">send</mat-icon></a>
+      </div> -->
+      <div class="card" *ngFor="let profile of profiles">
+        <img src="{{profile.picture}}" alt="Avatar" style="width:100%">
+        <div class="card-content ">
+          <h4><b>{{profile.name}}<span matTooltip="{{profile.online?'online':'offline'}}" [ngStyle]="{'color': profile.online ? 'green' : 'red'}" class="mrg-left-5">● </span></b><span></span></h4>
+          <p>{{profile.age}} години</p>
+          <div class="w100p text-center mrg-top-10  ">
+            <a class="row st-button text-white"   href="sms:1974?&body=chat" color="accent" mat-stroked-button>Започни чат <mat-icon class="rot45">send</mat-icon></a>
+          </div>
         </div>
       </div>
-
-      <div class="card  mrg-right-20 ">
-        <img src="../../assets/static/Hot-Selfies-81.jpg" alt="Avatar" >
-        <div class="pad-20 maxh20p text-center end grad center-items">
-          <!-- <h4><b><span matTooltip="online" style="color: green;margin-right: 5px;">● online</span></b></h4> -->
-          <p class="mrg-bottom-5">📍 <span class="text-fade">е на 1kм от теб.</span> </p>
-          <p class="mrg-bottom-5">Посети вашият профил</p>
-
-          <a class="row st-button text-white"   href="sms:1974?&body=start" color="accent" mat-stroked-button>Започни чат <mat-icon class="rot45">send</mat-icon></a>
-
-        </div>
-      </div>
-      <div class="card  mrg-right-20 ">
-        <img src="../../assets/static/treat-your-selfie-to-some-shelfie-7.jpg" class="" alt="Avatar" >
-        <div class="pad-20 maxh20p text-center end grad center-items ">
-           <p class="mrg-bottom-5">📍 <span class="text-fade">е на 10km от теб.</span> </p>
-          <!-- <h4><b><span matTooltip="online" style="color: green;margin-right: 5px;">● online</span></b></h4> -->
-          <p class="mrg-bottom-5">Хареса вашия профил</p>
-          <a class="row st-button text-white"   href="sms:1974?&body=ok" color="accent" mat-stroked-button>Започни чат <mat-icon class="rot45">send</mat-icon></a>
-        </div>
-      </div>
-      <div class="card  mrg-right-20 ">
-        <img src="../../assets/static/viber_image_2022-08-10_21-28-08-524.jpg"  alt="Avatar" >
-        <div class="pad-20 maxh20p text-center end grad center-items">
-          <!-- <h4><b><span matTooltip="online" style="color: green;margin-right: 5px;">● online</span></b></h4> -->
-           <p class="mrg-bottom-5">📍 <span class="text-fade">е на 3.8km от теб.</span> </p>
-          <p class="mrg-bottom-5" >Ви изпрати съобщение</p>
-          <a class="row st-button text-white"  href="sms:1974?&body=chat" color="accent" mat-stroked-button>Отговори <mat-icon class="rot45">send</mat-icon></a>
-        </div>
-      </div>
-
 
     </div>
     <div class=" center-items">

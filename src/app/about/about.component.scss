@@ -1,0 +1,15 @@
+.scroll-div{
+  max-height: 90vh;
+  overflow: auto;
+  padding: 50px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+// @media (min-width: 600px) {
+//   .scroll-div { max-width: 80%; }
+// }
+
+// /* Screen larger than 900px? 3 columns */
+// @media (max-width: 1080px) {
+//   .scroll-div {  max-width:  90%;  }
+// }

@@ -7,43 +7,49 @@
   </div>
 
   <div class="h100p   center-items mrg-top-40">
-
-    <div class="flex flex-column-container center-items ">
-      <div>
-        <h1>Филтър</h1>
-      </div>
-      <div class="row mrg-right-20 mrg-left-30 filter">
-        <button mat-stroked-button [ngClass]="{'active':this.currentActiveTab == 0 }" (click)="change(0)" >20-25</button>
-        <button mat-stroked-button [ngClass]="{'active':this.currentActiveTab == 1 }" (click)="change(1)" >25-35</button>
-        <button mat-stroked-button [ngClass]="{'active':this.currentActiveTab == 2 }" (click)="change(2)" >35-45</button>
-        <button mat-stroked-button [ngClass]="{'active':this.currentActiveTab == 3 }" (click)="change(3)" >Мъже</button>
-        <button mat-stroked-button [ngClass]="{'active':this.currentActiveTab == 4 }" (click)="change(4)" >Жени</button>
-      </div>
-    </div>
-    <div class="cards">
-
-      <div class="card" *ngFor="let profile of filterProfiles">
-        <img src="{{profile.picture}}" alt="Avatar" style="width:100%">
-        <div class="card-content ">
-          <h4><b>{{profile.name}}<span matTooltip="{{profile.online?'online':'offline'}}"
-                [ngStyle]="{'color': profile.online ? 'green' : 'red'}" class="mrg-left-5">● </span></b><span></span>
-          </h4>
-          <p>{{profile.age}} години</p>
-          <div class="w100p text-center mrg-top-10  ">
-            <a class="row st-button text-white" href="sms:191993?&body=Hey + {{profile.name.split(' ')[0]}}"
-              color="accent" mat-stroked-button>{{profile.online?'Започни чат':'Остави съобщение'}}<mat-icon
-                class="rot45">send</mat-icon></a>
-          </div>
+    <div>
+      <div class="flex flex-column-container center-items ">
+        <div>
+          <h1>Филтър</h1>
+        </div>
+        <div class="row mrg-right-20 mrg-left-30 filter">
+          <button mat-stroked-button [ngClass]="{'active':this.currentActiveTab == 0 }"
+            (click)="change(0)">20-25</button>
+          <button mat-stroked-button [ngClass]="{'active':this.currentActiveTab == 1 }"
+            (click)="change(1)">25-35</button>
+          <button mat-stroked-button [ngClass]="{'active':this.currentActiveTab == 2 }"
+            (click)="change(2)">35-45</button>
+          <button mat-stroked-button [ngClass]="{'active':this.currentActiveTab == 3 }"
+            (click)="change(3)">Мъже</button>
+          <button mat-stroked-button [ngClass]="{'active':this.currentActiveTab == 4 }"
+            (click)="change(4)">Жени</button>
         </div>
       </div>
+      <div class="cards ">
 
-    </div>
-    <div class=" center-items">
-      <div class="row mrg-bottom-10">
-        Започни чат сега с най-близкия до теб потребител!
+        <div class="card" *ngFor="let profile of filterProfiles">
+          <img src="{{profile.picture}}" alt="Avatar" style="width:100%">
+          <div class="card-content ">
+            <h4><b>{{profile.name}}<span matTooltip="{{profile.online?'online':'offline'}}"
+                  [ngStyle]="{'color': profile.online ? 'green' : 'red'}" class="mrg-left-5">● </span></b><span></span>
+            </h4>
+            <p>{{profile.age}} години</p>
+            <div class="w100p text-center mrg-top-10  ">
+              <a class="row st-button text-white" href="sms:191993?&body=Hey {{profile.name.split(' ')[0]}}"
+                color="primary" mat-raised-button>{{profile.online?'Започни чат':'Остави съобщение'}}<mat-icon
+                  class="rot45">send</mat-icon></a>
+            </div>
+          </div>
+        </div>
+
       </div>
+      <div class=" center-items">
+        <div class="row mrg-bottom-10">
+          Започни чат сега с най-близкия до теб потребител!
+        </div>
 
-      <a class="row" href="sms:191993" id="start-chat-btn" color="accent" mat-raised-button>Започни чат</a>
+        <a class="row" href="sms:191993" id="start-chat-btn" color="accent" mat-raised-button>Започни чат</a>
+      </div>
     </div>
   </div>
   <hr>
@@ -52,13 +58,15 @@
     <div class="h200"></div>
 
     <hr>
-    <p class="mrg-top-20  info">
-      Най-успешният сайт за онлайн запознанства. Влизайки в сайта за запознанства вие автоматично се съгласяте с нашите
-      правила и условия за използването му. Вашите данни са защитени, спрямо закона за защита на потребителите на
-      територията на Република България! Тази услуга е забранена за лица под 18 години! Всяко изпратено съобщение е на
-      стойност 4.80BGN.
 
-    </p>
-
+  </div>
+  <div class="mrg-top-20   w100p text-center">
+    <button mat-raised-button (click)="onRegister()" color="primary">Станете част от екипа.</button>
+  </div>
+  <div class="mrg-top-20  info  w100p text-center">
+    Най-успешният сайт за онлайн запознанства. Влизайки в сайта за запознанства вие автоматично се съгласяте с нашите
+    правила и условия за използването му. Вашите данни са защитени, спрямо закона за защита на потребителите на
+    територията на Република България! Тази услуга е забранена за лица под 18 години! Всяко изпратено съобщение е на
+    стойност 4.80BGN.
   </div>
 </div>

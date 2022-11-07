@@ -90,4 +90,7 @@ export class WelcomeComponent implements OnInit {
       console.log(this.currentActiveTab,this.filterProfiles)
     }
   }
+  onRegister(){
+    this.router.navigate(['/openSms'])
+  }
 }

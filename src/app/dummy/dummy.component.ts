@@ -15,7 +15,6 @@ export class DummyComponent implements OnInit {
     let a = document.getElementById('trigger') as HTMLElement;
     a.click();
 
-    setTimeout(()=>this.router.navigate(['/']),1500)
   }
 
 }

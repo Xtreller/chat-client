@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import * as profiles from '../../assets/data/profiles.json';
 
 interface Profile {
-  _id: "63601a19e1744257a31ce71b",
+  _id: string,
   online: boolean,
   picture: string,
   age: number,

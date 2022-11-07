@@ -12,7 +12,6 @@
       <div>
         <h1>Филтър</h1>
       </div>
-
       <div class="row mrg-right-20 mrg-left-30 filter">
         <button mat-stroked-button [ngClass]="{'active':this.currentActiveTab == 0 }" (click)="change(0)" >20-25</button>
         <button mat-stroked-button [ngClass]="{'active':this.currentActiveTab == 1 }" (click)="change(1)" >25-35</button>
@@ -20,31 +19,9 @@
         <button mat-stroked-button [ngClass]="{'active':this.currentActiveTab == 3 }" (click)="change(3)" >Мъже</button>
         <button mat-stroked-button [ngClass]="{'active':this.currentActiveTab == 4 }" (click)="change(4)" >Жени</button>
       </div>
-      <!-- <div class="row text-center ">
-
-        <button mat-button [matMenuTriggerFor]="age">Възраст</button>
-        <mat-menu #age="matMenu">
-          <button mat-menu-item>20-25</button>
-          <button mat-menu-item>25-35</button>
-          <button mat-menu-item>35-45</button>
-        </mat-menu>
-        <button mat-button [matMenuTriggerFor]="gender">Пол</button>
-        <mat-menu #gender="matMenu">
-          <button mat-menu-item>Мъже</button>
-          <button mat-menu-item>Жени</button>
-        </mat-menu>
-      </div> -->
     </div>
-    <!-- <h3 class="text-left pad-10 pad-bottom-15 w35p font14"><span matTooltip="online" style="color: green;">● </span> Потребители online:</h3> -->
     <div class="cards">
-      <!-- <div  class="card  mrg-right-20  ">
-        <img src="../../assets/static/viber_image_2022-10-31_19-13-41-177.jpg" alt="Avatar" >
-        <div class="pad-20 maxh20p text-center center-items end  grad">
-          <p class="mrg-bottom-5">📍 <span class="text-fade ">е на 5km от теб.</span> </p>
-          <p>Търси запознанство</p>
-          <a class="row st-button text-white"   href="sms:1974?&body=chat" color="accent" mat-stroked-button>Започни чат <mat-icon class="rot45">send</mat-icon></a>
-        </div>
-      </div> -->
+
       <div class="card" *ngFor="let profile of filterProfiles">
         <img src="{{profile.picture}}" alt="Avatar" style="width:100%">
         <div class="card-content ">

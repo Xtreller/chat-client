@@ -26,6 +26,7 @@ import { AboutComponent } from './about/about.component';
 import { DummyComponent } from './dummy/dummy.component';
 import { VerificationCodeComponent } from './verification-code/verification-code.component';
 import { MatProgressSpinner, MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTabsModule } from '@angular/material/tabs';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -52,6 +53,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MaterialModule,
     HttpClientModule,
     AgGridModule,
+    MatTabsModule,
     MatProgressSpinnerModule
 
 

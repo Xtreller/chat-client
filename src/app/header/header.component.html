@@ -1,5 +1,5 @@
-<div class="w100p row flex-row-container">
-  <div class="logo pad-top-10 pad-left-10" >
+<div class="w100p row flex-row-container maxh10p">
+  <div class="logo " >
     <a href="/">
       <img src="../../favicon.ico" alt="" class="maxh100p ">
     </a>
@@ -16,11 +16,11 @@
       </mat-menu>
     </div>
     <div class="mrg-right-20">
-      <button mat-raised-button color="accent" (click)="onRegister()">Регистрирай се</button>
+      <button mat-raised-button id="reg-btn" color="accent" (click)="onRegister()">Регистрирай се</button>
       <button mat-icon-button [routerLink]="['/about']" matTooltip="About"><mat-icon>info</mat-icon></button>
-
-      <!-- <button class="menu-fix" mat-icon-button matBadge="2" matBadgeOverlap="true" matBadgeColor="accent" ></button> -->
-      <!-- <button mat-icon-button [matMenuTriggerFor]="menu">
+<!--
+      <button class="menu-fix" mat-icon-button matBadge="2" matBadgeOverlap="true" matBadgeColor="accent" ><mat-icon>messages</mat-icon></button>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
         <mat-icon>menu</mat-icon>
       </button>
       <mat-menu #menu="matMenu">

@@ -1,32 +1,47 @@
 .logo {
-
-  height: 50px;
-  width:50px;
+  margin-top: 20px;
+  margin-left: 20px;
+  max-height: 50px;
+  max-width: 50px;
+  min-height: 35px;
+  min-width: 35px;
 }
-.burger{
+
+.burger {
   display: flex;
   flex-direction: row;
   justify-content: end;
-  align-items: end;
+  align-items: center;
 }
-.menu-fix{
-  margin:10px;
+
+.menu-fix {
+  margin: 10px;
 }
-.contacts-menu{
+
+.contacts-menu {
   display: none;
 }
-.contacts-list{
+
+.contacts-list {
   display: block;
 }
+
 @media screen and (max-width:750px) {
-  .contacts-menu{
+  .contacts-menu {
     display: block;
   }
-  .contacts-list{
+
+  .contacts-list {
     display: none;
   }
 
 }
+
 // header{
 //   opacity: 0.1;
 // }
+@media screen and (max-width:350px) {
+  #reg-btn {
+    display: none;
+  }
+}

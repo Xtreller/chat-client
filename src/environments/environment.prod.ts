@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl:"https://hookychat-api.herokuapp.com/"
+  apiUrl:"http://core-hooky-chat.online"
 };

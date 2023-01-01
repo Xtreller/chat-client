@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl:"http://core-hooky-chat.online/"
+  apiUrl:"https://core-hooky-chat.online/"
 };
